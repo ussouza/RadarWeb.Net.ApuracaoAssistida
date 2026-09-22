@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <RootNamespace>RadarWeb.Net.ApuracaoAssistida.Api</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RadarWeb.Net.ApuracaoAssistida.Application\RadarWeb.Net.ApuracaoAssistida.Application.csproj" />
+    <ProjectReference Include="..\RadarWeb.Net.ApuracaoAssistida.Infrastructure\RadarWeb.Net.ApuracaoAssistida.Infrastructure.csproj" />
+  </ItemGroup>
+</Project>
