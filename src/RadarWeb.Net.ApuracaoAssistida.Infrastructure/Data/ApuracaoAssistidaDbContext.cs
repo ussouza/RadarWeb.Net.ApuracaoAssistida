@@ -176,7 +176,7 @@ public sealed class ApuracaoAssistidaDbContext(DbContextOptions<ApuracaoAssistid
             entity.Property(x => x.NumeroDarf).HasMaxLength(50).IsUnicode(false);
             entity.Property(x => x.Pa).HasMaxLength(7).IsUnicode(false).IsRequired();
             entity.Property(x => x.Vencimento).HasColumnType("datetime2");
-            entity.Property(x => x.NiFornecedor).HasMaxLength(20).IsUnicode(false);
+            entity.Property(x => x.NiFornecedor).HasMaxLength(20).IsUnicode(false).IsRequired();
             entity.Property(x => x.ChaveDfe).HasMaxLength(50).IsUnicode(false);
             entity.Property(x => x.Principal).HasColumnType("decimal(18,2)");
             entity.Property(x => x.Multa).HasColumnType("decimal(18,2)");
