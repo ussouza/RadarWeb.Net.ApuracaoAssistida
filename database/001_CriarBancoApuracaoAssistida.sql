@@ -16,28 +16,19 @@ BEGIN
 END
 GO
 
-IF OBJECT_ID('CBS.RetornoSolicitacao', 'U') IS NULL
+IF OBJECT_ID('CBS.Empresa', 'U') IS NULL
 BEGIN
-    CREATE TABLE CBS.RetornoSolicitacao
+    CREATE TABLE CBS.Empresa
     (
-        Id BIGINT IDENTITY(1,1) NOT NULL,
-        SolicitacaoId BIGINT NOT NULL,
-        NomeArquivo VARCHAR(255) NOT NULL,
-        ContentType VARCHAR(100) NULL,
-        TamanhoBytes BIGINT NULL,
-        DataDownload DATETIME2 NOT NULL,
-        Status VARCHAR(30) NOT NULL,
-        HashSha256 VARCHAR(64) NULL,
-        MensagemErro VARCHAR(2000) NULL,
+        Id INT IDENTITY(1,1) NOT NULL,
+        CnpjBase VARCHAR(8) NOT NULL,
+        Nome VARCHAR(200) NULL,
+        Ativo BIT NOT NULL CONSTRAINT DF_Empresa_Ativo DEFAULT (1),
+        DataCadastro DATETIME2 NOT NULL CONSTRAINT DF_Empresa_DataCadastro DEFAULT (SYSUTCDATETIME()),
 
-        CONSTRAINT PK_RetornoSolicitacao PRIMARY KEY (Id),
-        CONSTRAINT FK_RetornoSolicitacao_Solicitacao
-            FOREIGN KEY (SolicitacaoId)
-            REFERENCES CBS.Solicitacao (Id)
+        CONSTRAINT PK_Empresa PRIMARY KEY (Id),
+        CONSTRAINT UQ_Empresa_CnpjBase UNIQUE (CnpjBase)
     );
-
-    CREATE INDEX IX_RetornoSolicitacao_SolicitacaoId_HashSha256
-        ON CBS.RetornoSolicitacao (SolicitacaoId, HashSha256);
 END
 GO
 
@@ -70,18 +61,27 @@ BEGIN
 END
 GO
 
-IF OBJECT_ID('CBS.Empresa', 'U') IS NULL
+IF OBJECT_ID('CBS.RetornoSolicitacao', 'U') IS NULL
 BEGIN
-    CREATE TABLE CBS.Empresa
+    CREATE TABLE CBS.RetornoSolicitacao
     (
-        Id INT IDENTITY(1,1) NOT NULL,
-        CnpjBase VARCHAR(8) NOT NULL,
-        Nome VARCHAR(200) NULL,
-        Ativo BIT NOT NULL CONSTRAINT DF_Empresa_Ativo DEFAULT (1),
-        DataCadastro DATETIME2 NOT NULL CONSTRAINT DF_Empresa_DataCadastro DEFAULT (SYSUTCDATETIME()),
+        Id BIGINT IDENTITY(1,1) NOT NULL,
+        SolicitacaoId BIGINT NOT NULL,
+        NomeArquivo VARCHAR(255) NOT NULL,
+        ContentType VARCHAR(100) NULL,
+        TamanhoBytes BIGINT NULL,
+        DataDownload DATETIME2 NOT NULL,
+        Status VARCHAR(30) NOT NULL,
+        HashSha256 VARCHAR(64) NULL,
+        MensagemErro VARCHAR(2000) NULL,
 
-        CONSTRAINT PK_Empresa PRIMARY KEY (Id),
-        CONSTRAINT UQ_Empresa_CnpjBase UNIQUE (CnpjBase)
+        CONSTRAINT PK_RetornoSolicitacao PRIMARY KEY (Id),
+        CONSTRAINT FK_RetornoSolicitacao_Solicitacao
+            FOREIGN KEY (SolicitacaoId)
+            REFERENCES CBS.Solicitacao (Id)
     );
+
+    CREATE INDEX IX_RetornoSolicitacao_SolicitacaoId_HashSha256
+        ON CBS.RetornoSolicitacao (SolicitacaoId, HashSha256);
 END
 GO
