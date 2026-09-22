@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>RadarWeb.Net.ApuracaoAssistida.Worker</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RadarWeb.Net.ApuracaoAssistida.Application\RadarWeb.Net.ApuracaoAssistida.Application.csproj" />
+    <ProjectReference Include="..\RadarWeb.Net.ApuracaoAssistida.Infrastructure\RadarWeb.Net.ApuracaoAssistida.Infrastructure.csproj" />
+  </ItemGroup>
+</Project>
