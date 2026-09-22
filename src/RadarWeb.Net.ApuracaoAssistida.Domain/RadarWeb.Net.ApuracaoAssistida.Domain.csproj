@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>RadarWeb.Net.ApuracaoAssistida.Domain</RootNamespace>
+  </PropertyGroup>
+</Project>
