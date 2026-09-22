@@ -2,15 +2,14 @@
   <PropertyGroup>
     <RootNamespace>RadarWeb.Net.ApuracaoAssistida.Infrastructure</RootNamespace>
   </PropertyGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\RadarWeb.Net.ApuracaoAssistida.Application\RadarWeb.Net.ApuracaoAssistida.Application.csproj" />
     <ProjectReference Include="..\RadarWeb.Net.ApuracaoAssistida.Domain\RadarWeb.Net.ApuracaoAssistida.Domain.csproj" />
   </ItemGroup>
+
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="10.0.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.0">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
   </ItemGroup>
 </Project>
