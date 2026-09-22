@@ -152,12 +152,12 @@ public sealed class ApuracaoAssistidaDbContext(DbContextOptions<ApuracaoAssistid
             entity.Property(x => x.Ni).HasMaxLength(8).IsUnicode(false).IsRequired();
             entity.Property(x => x.NiConsumidor).HasMaxLength(20).IsUnicode(false);
             entity.Property(x => x.DataArrecadacao).HasColumnType("datetime2");
-            entity.Property(x => x.NumeroDarf).HasMaxLength(50).IsUnicode(false);
-            entity.Property(x => x.NiAdquirente).HasMaxLength(20).IsUnicode(false);
+            entity.Property(x => x.NumeroDarf).HasMaxLength(50).IsUnicode(false).IsRequired();
+            entity.Property(x => x.NiAdquirente).HasMaxLength(20).IsUnicode(false).IsRequired();
             entity.Property(x => x.Pa).HasMaxLength(7).IsUnicode(false).IsRequired();
             entity.Property(x => x.Vencimento).HasColumnType("datetime2");
-            entity.Property(x => x.NiContribuinte).HasMaxLength(20).IsUnicode(false);
-            entity.Property(x => x.ChaveDfe).HasMaxLength(50).IsUnicode(false);
+            entity.Property(x => x.NiContribuinte).HasMaxLength(20).IsUnicode(false).IsRequired();
+            entity.Property(x => x.ChaveDfe).HasMaxLength(50).IsUnicode(false).IsRequired();
             entity.Property(x => x.Principal).HasColumnType("decimal(18,2)");
             entity.Property(x => x.Multa).HasColumnType("decimal(18,2)");
             entity.Property(x => x.Juros).HasColumnType("decimal(18,2)");
