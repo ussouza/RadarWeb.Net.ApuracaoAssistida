@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>RadarWeb.Net.ApuracaoAssistida.Application</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RadarWeb.Net.ApuracaoAssistida.Domain\RadarWeb.Net.ApuracaoAssistida.Domain.csproj" />
+  </ItemGroup>
+</Project>
