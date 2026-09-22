@@ -7,13 +7,13 @@ public sealed class Recolhimento
     public string Ni { get; set; } = string.Empty;
     public string? NiConsumidor { get; set; }
     public DateTime DataArrecadacao { get; set; }
-    public string? NumeroDarf { get; set; }
+    public string NumeroDarf { get; set; }
     public int Tipo { get; set; }
     public int Sequencial { get; set; }
     public string Pa { get; set; } = string.Empty;
     public DateTime Vencimento { get; set; }
     public string? NiFornecedor { get; set; }
-    public string? ChaveDfe { get; set; }
+    public string ChaveDfe { get; set; }
     public decimal Principal { get; set; }
     public decimal Multa { get; set; }
     public decimal Juros { get; set; }
